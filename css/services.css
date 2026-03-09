@@ -1,0 +1,139 @@
+/* css/services.css */
+
+.services-hero {
+    width: 100%;
+    min-height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://www.shutterstock.com/image-photo/defocused-abstract-blur-image-fitness-600nw-2658571461.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.services-hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: rgb(230, 26, 26);
+}
+
+.services-hero-content p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.services-grid-section {
+    padding: 80px 20px;
+    background-color: #1d1d1d;
+}
+
+.services-grid-section h1{
+    text-align: center;
+    margin: 0 0 80px 0;
+    font-size: 80px;
+}
+
+.services-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: rgba(29, 29, 29, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 26px;
+    margin: 24px 0 16px;
+    color: rgb(230, 26, 26);
+}
+
+.service-card p {
+    padding: 0 24px 30px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+.services-cta {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #000;
+    color: white;
+}
+
+.services-cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: rgb(230, 26, 26);
+}
+
+.services-cta p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #ccc;
+}
+
+.cta-button {
+    background-color: rgb(230, 26, 26);
+    color: white;
+    padding: 16px 40px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: darkred;
+}
+
+
+@media (max-width: 768px) {
+    .services-hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .services-hero-content p {
+        font-size: 18px;
+    }
+    
+    .services-grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-cta h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card img {
+        height: 200px;
+    }
+    
+    .service-card h3 {
+        font-size: 22px;
+    }
+}
