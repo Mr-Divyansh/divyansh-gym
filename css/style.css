@@ -557,6 +557,10 @@ body {
     animation-play-state: paused;
 }
 
+/* =============================================
+   CONTACT SECTION — FULLY FIXED
+   ============================================= */
+
 .contact {
     width: 100%;
     min-height: 100vh;
@@ -579,12 +583,11 @@ body {
     letter-spacing: 1px;
 }
 
-
 .form-and-address-container {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
-    gap: 70px;
+    gap: 60px;
     padding: 0 80px;
     flex-wrap: wrap;
 }
@@ -592,6 +595,7 @@ body {
 .form-wrapper {
     flex: 1;
     min-width: 300px;
+    max-width: 480px;
 }
 
 .contact-form {
@@ -607,7 +611,6 @@ body {
 .form-inputs input,
 .form-inputs textarea {
     width: 100%;
-    max-width: 450px;
     padding: 12px 16px;
     border-radius: 12px;
     border: 1px solid #cccccc;
@@ -638,7 +641,7 @@ body {
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
-
+    cursor: pointer;
     background-color: transparent;
     color: white;
     border: 2px solid white;
@@ -649,109 +652,161 @@ body {
     color: #111;
 }
 
+/* ---- Address Side ---- */
 
 .address-wrapper {
     flex: 1;
     min-width: 300px;
+    max-width: 520px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.address-container {
+    width: 100%;
 }
 
 .address-title-text {
-    margin: 20px 0;
-    text-align: center;
+    margin-bottom: 28px;
 }
 
 .address-title-text h1 {
-    font-size: 25px;
+    font-size: 26px;
+    margin-bottom: 10px;
 }
 
 .address-title-text p {
-    margin: 10px 0;
     line-height: 1.6;
-    text-align: left;
+    color: #ccc;
+    font-size: 15px;
 }
+
+/* ---- Grid of 4 contact info items ---- */
 
 .address-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 20px;
+    margin-bottom: 32px;
+}
+
+.address-info-call,
+.address-info-email,
+.address-info-website,
+.address-info-address {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
 }
 
+/* ---- Icon circles ---- */
 
-.address-info-call, .address-info-email, .address-info-website, .address-info-address{
-    display: flex;
-    width: 250px;
-}
-
-.address-info-call h2, .address-info-email h2, .address-info-website h2, .address-info-address h2{
-    text-align: left;
-}
-
-.Icons-Email-website-Address h5{
-    text-align: left;
-}
-
-.Icons-phone-call-img, .Icons-Email-img, .address-info-Website-img, .address-info-Address-img {
-    width: 50px;
-    height: 50px;
-    margin: 0px 20px 10px 0;
+.Icons-phone-call-img,
+.Icons-Email-img,
+.address-info-Website-img,
+.address-info-Address-img {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    margin-right: 14px;
     border: 2px solid #ffffff;
     border-radius: 50%;
-    background-color: rgb(230, 26, 26); 
+    background-color: rgb(230, 26, 26);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     flex-shrink: 0;
 }
 
-.Icons-phone-call-img:hover, .Icons-Email-img:hover, .address-info-Website-img:hover, .address-info-Address-img:hover{
+.Icons-phone-call-img:hover,
+.Icons-Email-img:hover,
+.address-info-Website-img:hover,
+.address-info-Address-img:hover {
     background-color: darkred;
-    
 }
 
-.Icons-phone-call-img img, .Icons-Email-img img, .address-info-Website-img img, .address-info-Address-img img {
-    width: 24px;
-    height: 24px;
+.Icons-phone-call-img img,
+.Icons-Email-img img,
+.address-info-Website-img img,
+.address-info-Address-img img {
+    width: 22px;
+    height: 22px;
     object-fit: contain;
 }
-.address-info > div {
-    text-align: center;
+
+/* ---- Text content next to icons ---- */
+
+.address-info-call-content,
+.Icons-Email-content,
+.Icons-Email-website-content,
+.Icons-Email-website-Address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.address-info h2 {
-    font-size: 18px;
-    margin-bottom: 4px;
-}
-
-.address-info h5 {
-    font-size: 15px;
-    font-weight: 500;
-    color: #dddddd;
-}
-
-.mobile-off-line{
+.address-info h2,
+.address-info-call-content h2,
+.Icons-Email-content h2,
+.Icons-Email-website-content h2,
+.Icons-Email-website-Address h2 {
     font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-align: left;
+    white-space: nowrap;
 }
 
-.follow-here{
-    margin: 20px 0 0 0;
+.address-info h5,
+.address-info-call-content h5,
+.Icons-Email-content h5,
+.Icons-Email-website-content h5,
+.Icons-Email-website-Address h5 {
+    font-size: 13px;
+    font-weight: 400;
+    color: #dddddd;
+    text-align: left;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.Icons-Email-website-content a {
+    color: #dddddd;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.Icons-Email-website-content a:hover {
+    color: rgb(230, 26, 26);
+}
+
+/* ---- Follow Us ---- */
+
+.follow-here {
+    margin-top: 8px;
+}
+
+.follow-here-title h1 {
+    font-size: 22px;
+    margin-bottom: 16px;
 }
 
 .social-links-follow {
-    margin-top: 20px;
     display: flex;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .social-links-follow a {
-    width: 39px;
-    height: 39px;
-    border: 0px solid #ffffff;
+    width: 40px;
+    height: 40px;
+    border: none;
     border-radius: 50%;
     background-color: #fa0000;
     display: flex;
@@ -765,35 +820,23 @@ body {
 .social-links-follow a:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    border-color: #ff6b00;
 }
 
-.social-links-follow a:hover:nth-child(1) {
-    background-color: #1877F2;
-}
-
-.social-links-follow a:hover:nth-child(2) { 
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
-}
-
-.social-links-follow a:hover:nth-child(3) {
-    background-color: #1DA1F2;
-}
-
-.social-links-follow a:hover:nth-child(4) {
-    background-color: #FF0000;
-}
+.social-links-follow a:hover:nth-child(1) { background-color: #1877F2; }
+.social-links-follow a:hover:nth-child(2) { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-links-follow a:hover:nth-child(3) { background-color: #1DA1F2; }
+.social-links-follow a:hover:nth-child(4) { background-color: #FF0000; }
 
 .social-links-follow img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     filter: brightness(0) invert(1);
     transition: filter 0.3s ease;
 }
 
-.social-links-follow a:hover img {
-    filter: brightness(1) invert(0);
-}
+/* =============================================
+   FOOTER
+   ============================================= */
 
 .footer {
     background-color: #111;
@@ -809,7 +852,7 @@ body {
 
 .footer-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
 }
@@ -882,21 +925,10 @@ body {
     border-color: #ff6b00;
 }
 
-.social-links a:hover:nth-child(1) {
-    background-color: #1877F2;
-}
-
-.social-links a:hover:nth-child(2) { 
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
-}
-
-.social-links a:hover:nth-child(3) {
-    background-color: #1DA1F2;
-}
-
-.social-links a:hover:nth-child(4) {
-    background-color: #FF0000;
-}
+.social-links a:hover:nth-child(1) { background-color: #1877F2; }
+.social-links a:hover:nth-child(2) { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-links a:hover:nth-child(3) { background-color: #1DA1F2; }
+.social-links a:hover:nth-child(4) { background-color: #FF0000; }
 
 .social-links img {
     width: 24px;
@@ -923,48 +955,29 @@ body {
     line-height: 1.6;
 }
 
-.instagram-link {
-    color: #ff6b00;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.instagram-link:hover {
-    color: #e4405f;
-    text-decoration: underline;
-}
-
-.instagram-link .instagram-icon {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.instagram-link:hover .instagram-icon {
-    transform: scale(1.2) rotate(10deg);
-}
-
 .dg2-insta {
     color: inherit;
     font-style: normal;
 }
 
 .fa-instagram {
-  color: transparent;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  background-clip: text;
-  -webkit-background-clip: text;
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
-.gym-text-footer{
+.gym-text-footer {
     color: rgb(230, 26, 26);
     font-size: 16px;
     letter-spacing: 2px;
-    margin-bottom: 32px;
-    font-weight: 60px;
+    font-weight: bold;
+}
+
+.footer-logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
 }
 
 .footer-contact-list {
@@ -1006,13 +1019,39 @@ body {
     line-height: 1.5;
 }
 
+/* =============================================
+   UTILITY
+   ============================================= */
+
+.mobile-off-line {
+    font-size: 16px;
+}
+
+/* =============================================
+   MEDIA QUERIES
+   ============================================= */
 
 @media (max-width: 425px) {
-    .mobile-off-line{
+    .mobile-off-line {
         display: none;
     }
 }
 
+@media (max-width: 768px) {
+    .address-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .form-and-address-container {
+        padding: 0 20px;
+        gap: 40px;
+    }
+
+    .contact-title h1 {
+        font-size: 30px;
+    }
+}
 
 @media (max-width: 992px) {
     .form-and-address-container {
@@ -1025,7 +1064,7 @@ body {
     .form-wrapper,
     .address-wrapper {
         width: 100%;
-        max-width: 500px;
+        max-width: 560px;
     }
 
     .contact-title h1 {
@@ -1039,7 +1078,7 @@ body {
     }
 
     .contact-title h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .form-and-address-container {
@@ -1053,64 +1092,25 @@ body {
     }
 
     .address-title-text h1 {
-        font-size: 24px;
-    }
-
-    .address-info h2 {
-        font-size: 16px;
-    }
-
-    .address-info h5 {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 900px) {
-    .div-form-add-contact-us {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .form-input-container input,
-    .form-input-container textarea {
-        width: 100%;
-    }
-
-    .addess {
-        text-align: center;
-    }
-}
-
-
-@media (max-width: 900px) {
-    .div-form-add-contact-us {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .form-input-container input,
-    .form-input-container textarea {
-        width: 100%;
+        font-size: 22px;
     }
 }
 
 @media (max-width: 625px) {
-
     .home {
-    height: 80vh;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/photo_2025-12-21_21-06-24.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 20px;
-    } 
+        height: 80vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/photo_2025-12-21_21-06-24.jpg');
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        padding: 20px;
+    }
 
-    .about-content-text-title-p{
+    .about-content-text-title-p {
         text-align: left;
     }
 }
@@ -1121,13 +1121,13 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-    
+
     .upcoming-classes-box {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .Trainers {
         flex-direction: row;
         flex-wrap: wrap;
@@ -1135,69 +1135,68 @@ body {
     }
 }
 
-
 @media (min-width: 768px) {
     .nav {
         padding: 0 40px;
-    }  
+    }
 
     .logo h1 {
         font-size: 28px;
     }
-    
+
     .navbar ul {
         gap: 30px;
     }
-    
+
     .navbar ul li a {
         font-size: 18px;
     }
-    
+
     .home h1 {
         font-size: 56px;
     }
-    
+
     .home p {
         font-size: 18px;
         max-width: 600px;
     }
-    
+
     .home-btn {
         flex-direction: row;
         max-width: 500px;
         gap: 20px;
     }
-    
+
     .marquee-text {
         font-size: 32px;
     }
-    
+
     .Services-page-up-line {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
         align-items: center;
     }
-    
+
     .Services-content {
         text-align: left;
     }
-    
+
     .About {
         flex-direction: row;
         gap: 50px;
         text-align: left;
     }
-    
+
     .About-content-text {
         text-align: left;
     }
-    
+
     .about-content-text-list-ul {
         text-align: left;
         margin: 0;
     }
-    
+
     .testimonial-card {
         flex: 0 0 340px;
     }
@@ -1207,28 +1206,28 @@ body {
     .home h1 {
         font-size: 70px;
     }
-    
+
     .marquee-text {
         font-size: 36px;
         animation-duration: 20s;
     }
-    
+
     .Services-box-container {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .exp {
         gap: 120px;
     }
-    
+
     .years {
         font-size: 60px;
     }
-    
+
     .testimonials-track {
         gap: 40px;
     }
-    
+
     .testimonial-card {
         flex: 0 0 380px;
     }
@@ -1238,7 +1237,7 @@ body {
     .nav {
         padding: 0 80px;
     }
-    
+
     .services-wrapper {
         max-width: 1200px;
         margin: 0 auto;
@@ -1249,31 +1248,31 @@ body {
     .home h1 {
         font-size: 32px;
     }
-    
+
     .home p {
         font-size: 14px;
     }
-    
+
     .marquee-text {
         font-size: 20px;
     }
-    
+
     .testimonial-card {
         flex: 0 0 260px;
     }
-    
+
     .Services-content h2 {
         font-size: 24px;
     }
-    
+
     .About-content-text h1 {
         font-size: 24px;
     }
-    
+
     .Trainers-title-text h1 {
         font-size: 24px;
     }
-    
+
     .testimonials-header h1 {
         font-size: 24px;
     }
