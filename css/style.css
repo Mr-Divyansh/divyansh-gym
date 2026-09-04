@@ -12,6 +12,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #1d1d1d;
     color: white;
+    overflow-x: hidden;
 }
 
 .nav {
@@ -1019,6 +1020,68 @@ body {
     line-height: 1.5;
 }
 
+.whatsapp-link {
+    display: inline-block;
+    margin-top: 6px;
+    color: #8bd17c;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.whatsapp-link:hover {
+    text-decoration: underline;
+}
+
+.opening-hours {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 8px;
+}
+
+.opening-hours h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.opening-hours p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.faq-section {
+    padding: 70px 20px;
+    background-color: #181818;
+}
+
+.faq-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-content h2 {
+    font-size: 32px;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.faq-content details {
+    border-bottom: 1px solid #444;
+    padding: 18px 0;
+}
+
+.faq-content summary {
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.faq-content details p {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 12px 0 0;
+}
+
 /* =============================================
    UTILITY
    ============================================= */
@@ -1032,6 +1095,22 @@ body {
    ============================================= */
 
 @media (max-width: 425px) {
+    .nav {
+        padding: 0 10px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .navbar ul {
+        gap: 8px;
+    }
+
+    .navbar ul li a {
+        font-size: 13px;
+    }
+
     .mobile-off-line {
         display: none;
     }
